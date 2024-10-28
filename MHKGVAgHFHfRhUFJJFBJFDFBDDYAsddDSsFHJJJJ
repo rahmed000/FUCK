@@ -458,7 +458,7 @@ do
 
 	local utils = {};
 
-	function utils:RandomString(len: number) -- SPDM
+	function utils:RandomString(len: number) -- 
 		local chars = {}
 		for i = 1, len or math.random(16, 32) do
 			chars[i] = string.char(math.random(33, 230))
@@ -482,7 +482,7 @@ do
 			end
 		end
 
-		--[[ SPDM | Random name protection, this system is not compatible as it access the instances by the name.
+		--[[  | Random name protection, this system is not compatible as it access the instances by the name.
 		
 			if isRunning and not isStudio then
 				instance.Name = utils:RandomString(nil)
@@ -622,7 +622,7 @@ do
 
 	local utils = {};
 
-	-- SPDM
+	-- 
 	function utils:Notify(text: string)
 		cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
 			Title = "Codex " .. (isiosdevice() and "iOS" or "Android"),
@@ -717,7 +717,7 @@ do
 				return;
 			end
 
-			pcall(function() -- SPDM
+			pcall(function() -- 
 				data = httpService:JSONDecode(hostData)
 			end)
 		end
@@ -923,8 +923,8 @@ do
 	local signalCache = {};
 	local settingsCache = {
 		executor = {
-			openingMode = "Floating Icon", -- SPDM Team | Floating Icon
-			showParticles = true, -- SPDM Team | Show Particles Setting
+			openingMode = "Floating Icon", -- curse1787 | Floating Icon
+			showParticles = true, --  | Show Particles Setting
 			autoExecute = true,
 			autoSaveTabs = false,
 			fps = {
@@ -2842,7 +2842,7 @@ do
 	end
 
 	local function registerCharacter(character: Instance)
-		-- SPDM | Error prevention checks
+		--  | Error prevention checks
 		if not cache then
 			cache = {}
 		end
@@ -2928,7 +2928,7 @@ do
 	local map = {
 		{
 			title = "Executor",
-			items = { -- SPDM Team | Opening Mode Setting
+			items = { --  | Opening Mode Setting
 				{
 					title = "Opening Mode",
 					linkedSetting = "executor.openingMode",
@@ -2936,7 +2936,7 @@ do
 					items = { "Floating Icon", "Edge Swipe", "Invisible Edge Swipe", "Small Icon" },
 					value = "Floating Icon"
 				},
-				{ -- SPDM Team | Show Particles Setting
+				{ --  | Show Particles Setting
 					title = "Show Floating Icon Particles",
 					linkedSetting = "executor.showParticles",
 					optionType = "toggle",
@@ -2945,7 +2945,7 @@ do
 				{
 					optionType = "separator"
 				},
-				{ -- SPDM Team | RScripts/ScriptBlox Setting
+				{ --  | RScripts/ScriptBlox Setting
 					title = "Scripts browser",
 					linkedSetting = "executor.scriptsBrowser",
 					optionType = "dropdown",
@@ -3780,7 +3780,7 @@ do
 				popups:Show("dropdown", newDropdown, newDropdown.instance.indicator);
 				newDropdown.selectionChangedConnection = dropdownPopup.onSelectionChanged:Connect(function(value: string)
 					determiningDict[determiningKey] = value;
-					task.delay(0.3, function () popups:Hide("dropdown"); end); -- SPDM Team | Auto-close contextmenu
+					task.delay(0.3, function () popups:Hide("dropdown"); end); --  | Auto-close contextmenu
 				end);
 			end
 		end);
@@ -4007,7 +4007,7 @@ do
 	--[[ Module ]]--
 
 	framework.pages.startup.changelog = (function(streak)
-		return instanceUtils:Create("Frame", {  -- SPDM Team | Streaks and Premium Sections
+		return instanceUtils:Create("Frame", {  --  | Streaks and Premium Sections
 			BackgroundTransparency = 1,
 			Name = "streaksPremium",
 			Position = UDim2.new(0.5, 12, 0.2, 46),
@@ -4072,7 +4072,7 @@ do
 					TextXAlignment = Enum.TextXAlignment.Left,
 					TextYAlignment = Enum.TextYAlignment.Top
 				}),
-				textButton({ -- SPDM Team | Buy Premium Button
+				textButton({ --  | Buy Premium Button
 					AnchorPoint = Vector2.new(0.5, 1), 
 					AutomaticSize = Enum.AutomaticSize.None,
 					MouseButton1Click = function()
@@ -4227,7 +4227,7 @@ do
 			IgnoreGuiInset = true,
 			Name = "gui",
 			ResetOnSpawn = false,
-			ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets, -- SPDM Team | Notch-aware UI
+			ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets, --  | Notch-aware UI
 			ZIndexBehavior = Enum.ZIndexBehavior.Global
 		}, {
 			instanceUtils:Create("Frame", {
@@ -4588,7 +4588,7 @@ do
 			Size = UDim2.new(0, 0, 1, 0),
 			ZIndex = 2
 		}, {
-			instanceUtils:Create("TextButton", { -- SPDM Team | Floating Icon
+			instanceUtils:Create("TextButton", { --  | Floating Icon
 				AnchorPoint = Vector2.new(0.5, 0.5),
 				BackgroundColor3 = Color3.fromHex("15151d"), 
 				BackgroundTransparency = .25,
@@ -4690,7 +4690,7 @@ do
 					FontSize = Enum.FontSize.Size12, 
 					Name = "poweredBy", 
 					Position = UDim2.new(0, 78, 0, 59), 
-					Text = "Codex > All", 
+					Text = "Codex > Premium", 
 					TextColor3 = Color3.fromHex("717176"), 
 					TextSize = 12, 
 					TextTransparency = 1, 
@@ -4715,7 +4715,7 @@ do
 			})
 		});
 
-		-- SPDM Team | Streak & Expiring Timer
+		-- curse1787 | Streak & Expiring Timer
 		local function fetchData()
 			local data = {
 				expiry = 0,
@@ -4787,7 +4787,7 @@ do
 				end
 			end
 
-			-- SPDM Team | Credits
+			-- curse1787 | Credits
 			local textLabel = bar.main.poweredBy;
 			local isAnimating = false;
 
@@ -4816,7 +4816,7 @@ do
 
 				fadeOut:Play()
 				fadeOut.Completed:Wait()
-				textLabel.Text = "Codex > All"
+				textLabel.Text = "Codex > Premium"
 				fadeIn:Play()
 				fadeIn.Completed:Wait()
 
@@ -4858,7 +4858,7 @@ do
 		updateText()
 
 
-		-- SPDM Team | Floating Icon
+		-- curse1787 | Floating Icon
 		local currentY = bar.floatingIcon.Position.Y
 		arceus_libs.input.handleCustomDrag(bar.floatingIcon)
 		arceus_libs.buttons.holdable(bar.floatingIcon).ShortClick.Event:Connect(function()
@@ -5022,7 +5022,7 @@ do
 			Value = indent;
 		});
 
-		-- SPDM | Indent pages
+		--  | Indent pages
 		if selected and map[selected] then
 			instanceUtils:Tween(map[selected], 0.25, {
 				Position = UDim2.new(0, indent, 1, 0);
@@ -5046,7 +5046,7 @@ do
 			end);
 		end
 
-		-- SPDM Team | Opening modes handler
+		-- curse1787 | Opening modes handler
 		local function createTween(target, properties)
 			return cloneref(game:GetService("TweenService")):Create(target, TweenInfo.new(0.25, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), properties)
 		end
@@ -5961,7 +5961,7 @@ do
 
 	--[[ Functions ]]--
 
-	-- | SPDM | Riky47#3355
+	-- 
 
 	local debounceTime = 0.1
 	local lastUpdateTime = 0
@@ -6060,7 +6060,7 @@ do
 	end
 
 	local function handleLexResult(lexResult: {any}, addTruncateEllipsis: boolean)
-		--[[ SPDM | You can eventually enable this
+		--[[  | You can eventually enable this
 		
 		local currentTime = os.clock()
 		if currentTime - lastUpdateTime < debounceTime then
@@ -6371,4 +6371,4 @@ do
 end
 
 arceus_libs.renderer.startRendering()
-framework.init(); -- SPDM Team
+framework.init(); -- curse1787
