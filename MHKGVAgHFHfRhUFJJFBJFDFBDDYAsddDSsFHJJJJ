@@ -625,7 +625,7 @@ do
 	-- 
 	function utils:Notify(text: string)
 		cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
-			Title = "Codex " .. (isiosdevice() and "iOS" or "Android"),
+			Title = "Codex " .. (isiosdevice() and "iOS" or "iOS"),
 			Text = text
 		});
 	end
@@ -4318,7 +4318,7 @@ do
 				AnchorPoint = Vector2.new(0.5, 0.5),
 				Name = "title",
 				Position = UDim2.new(0.5, 0, 0.2, -20),
-				Text = "Codex " .. (isiosdevice() and "iOS" or "Android"),
+				Text = "Codex " .. (isiosdevice() and "iOS" or "iOS"),
 				TextSize = 24
 			}),
 			textLabel({
@@ -4676,7 +4676,7 @@ do
 					FontSize = Enum.FontSize.Size18, 
 					Name = "title", 
 					Position = UDim2.new(0, 78, 0, 38), 
-					Text = "Codex " .. (isiosdevice() and "iOS" or "Android"),
+					Text = "Codex " .. (isiosdevice() and "iOS" or "iOS"),
 					TextColor3 = Color3.fromHex("ffffff"), 
 					TextSize = 16, 
 					TextTransparency = 1,
@@ -6371,4 +6371,4 @@ do
 end
 
 arceus_libs.renderer.startRendering()
-framework.init(); -- curse1787
+framework.init();
